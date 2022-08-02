@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+        - pathType: Prefix
+          path: /
+          backend:
+            service:
+              name: svc-news-portal
+              port:
+                number: 80
+        - pathType: Exact
+          path: /admin
+          backend:
+            service:
+              name: svc-news-system
+              port:
+                number: 80
