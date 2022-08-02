@@ -1,6 +1,6 @@
 # Local Kubernetes Cluster with Kind
 
-This repository presents a simple microservices project for recording and consuming news delivered in a Kubernetes environment. The idea is to build a local Kubernetes Cluster using the Kind tool and make the services (system, portal and database) available on different nodes through Node Affinity.
+This repository presents a simple microservices project for recording and consuming news delivered in a Kubernetes environment. The idea is to build a local Kubernetes Cluster using the Kind tool and make the services (system, portal and database) available on different nodes through Node Affinity. To manage external access to services in the cluster, an NGINX ingress was used as a reverse proxy and load balancer.
 
 ### Cluster Components
 
